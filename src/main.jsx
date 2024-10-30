@@ -13,6 +13,7 @@ import Users from './assets/Components/Users/Users.jsx';
 import UserDetails from './assets/Components/UserDetails/UserDetails.jsx';
 import Posts from './assets/Components/Posts/Posts.jsx';
 import PostDetails from './assets/Components/PostsDetails/PostDetails.jsx';
+import GraphChart from './assets/Components/GraphChart/GraphChart.jsx';
 
 
 const router = createBrowserRouter([
@@ -45,7 +46,11 @@ const router = createBrowserRouter([
     {
       path: "/post/:id",
       loader: ({params}) => fetch(`https://jsonplaceholder.typicode.com/posts/${params.id}`),
-      element:<PostDetails></PostDetails>
+      element:<PostDetails></PostDetails>,
+    },
+    {
+      path: "/graph",
+      element: <GraphChart></GraphChart>
     }
     ]
   },
